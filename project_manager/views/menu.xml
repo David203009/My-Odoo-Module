@@ -1,0 +1,5 @@
+<odoo>
+    <menuitem id="menu_project_manager_root" name="Project Manager"/>
+    <menuitem id="menu_project_manager_project" name="Projects" parent="menu_project_manager_root" action="action_project"/>
+    <menuitem id="menu_project_manager_task" name="Tasks" parent="menu_project_manager_root" action="action_task"/>
+</odoo>

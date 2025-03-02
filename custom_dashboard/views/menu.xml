@@ -1,0 +1,9 @@
+<odoo>
+    <!-- Menú para acceder al dashboard -->
+    <menuitem id="menu_custom_dashboard_root" name="Dashboard"/>
+    <menuitem id="menu_custom_dashboard" name="Custom Dashboard" parent="menu_custom_dashboard_root" action="action_custom_dashboard"/>
+
+    <!-- dashboard Menú para el modulo de project manager -->
+    <menuitem id="project_manager_otros" name="Otros" parent="project_manager.menu_project_manager_root"/>
+    <menuitem id="menu_custom_dashboard2" name="Custom Dashboard" parent="project_manager_otros" action="action_custom_dashboard"/>
+</odoo>

@@ -1,0 +1,9 @@
+<templates xml:space="preserve">
+    <t t-name="custom_dashboard.DashboardComponent">
+        <div>
+            <h1>Dashboard Personalizado</h1>
+            <p t-esc="state.message"/>
+            <button class="btn btn-primary" t-on-click="updateMessage">Actualizar Mensaje</button>
+        </div>
+    </t>
+</templates>

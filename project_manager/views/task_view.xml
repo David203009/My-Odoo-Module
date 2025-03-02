@@ -1,0 +1,94 @@
+<odoo>
+
+    <record id="view_task_form" model="ir.ui.view">
+        <field name="name">project_manager.task.form</field>
+        <field name="model">project_manager.task</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="state"/>
+                        <field name="project_id"/>
+                        <field name="user_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_task_tree" model="ir.ui.view">
+        <field name="name">project_manager.task.tree</field>
+        <field name="model">project_manager.task</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state"/>
+                <field name="project_id"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_task_kanban" model="ir.ui.view">
+        <field name="name">project_manager.task.kanban</field>
+        <field name="model">project_manager.task</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state"/>
+                <field name="project_id"/>
+                <field name="user_id"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_title">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                </div>
+                                <div>
+                                    <span>Fecha de inicio: </span>
+                                    <field name="start_date"/>
+                                </div>
+                                <div>
+                                    <span>Fecha de fin: </span>
+                                    <field name="end_date"/>
+                                </div>
+                                <div>
+                                    <span>Estado: </span>
+                                    <field name="state"/>
+                                </div>
+                                <div>
+                                    <span>Proyecto: </span>
+                                    <field name="project_id"/>
+                                </div>
+                                <div>
+                                    <span>Asignado a: </span>
+                                    <field name="user_id"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_task" model="ir.actions.act_window">
+        <field name="name">Tasks</field>
+        <field name="res_model">project_manager.task</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+</odoo>

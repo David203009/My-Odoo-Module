@@ -1,0 +1,16 @@
+<odoo>
+    <record id="demo_project_1" model="project_manager.project">
+        <field name="name">Project 1</field>
+        <field name="description">Description for Project 1</field>
+        <field name="start_date">2025-01-01</field>
+        <field name="end_date">2025-01-30</field>
+    </record>
+
+    <record id="demo_task_1" model="project_manager.task">
+        <field name="name">Task 1</field>
+        <field name="description">Description for Task 1</field>
+        <field name="start_date">2025-01-01</field>
+        <field name="end_date">2025-01-10</field>
+        <field name="project_id" ref="demo_project_1"/>
+    </record>
+</odoo>

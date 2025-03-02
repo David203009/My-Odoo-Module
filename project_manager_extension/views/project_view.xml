@@ -1,0 +1,29 @@
+<odoo>
+    <record id="view_project_kanban_inherit" model="ir.ui.view">
+        <field name="name">project_manager.project.kanban.inherit</field>
+        <field name="model">project_manager.project</field>
+        <field name="inherit_id" ref="project_manager.view_project_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="default_group_by">stage_id</attribute>
+            </xpath>
+            <xpath expr="//kanban" position="inside">
+                <field name="stage_id"/> <!-- Agrega el campo en la sección principal -->
+            </xpath>
+            <xpath expr="//templates//div[@class='oe_kanban_details']" position="inside">
+                <field name="stage_id"/> <!-- Agrega el campo dentro del template -->
+            </xpath>
+        </field>
+    </record>
+
+     <record id="view_project_form_inherit" model="ir.ui.view">
+        <field name="name">project_manager.project.form.inherit</field>
+        <field name="model">project_manager.project</field>
+        <field name="inherit_id" ref="project_manager.view_project_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="stage_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

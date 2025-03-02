@@ -1,0 +1,3 @@
+<odoo>
+    <menuitem id="menu_project_stage" name="Etapas" parent="project_manager.menu_project_manager_root" action="action_project_stage"/>
+</odoo>

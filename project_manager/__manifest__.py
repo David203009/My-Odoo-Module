@@ -1,0 +1,20 @@
+{
+    'name': 'Project Manager',
+    'version': '1.0',
+    'summary': 'Gestión de Proyectos y Tareas',
+    'description': 'Un módulo para gestionar proyectos y tareas, asignando responsables y estados.',
+    'author': 'Tu Nombre',
+    'website': 'https://tusitio.com',
+    'category': 'Project Management',
+    'depends': ['base'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/project_view.xml',
+        'views/task_view.xml',
+        'views/menu.xml',
+        'data/demo_data.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'application': True,
+}
